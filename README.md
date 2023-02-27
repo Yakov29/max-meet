@@ -1,90 +1,70 @@
-# Mux Meet
+# Getting Started with Create React App
 
-Mux Meet is a video conferencing app powered by [Mux Real-Time Video](https://mux.com/real-time-video), written in React, using the [Next.js](https://nextjs.org/) framework.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-![Four users in a Mux Meet call](https://user-images.githubusercontent.com/1211390/216212346-b319d137-0d2e-405a-bbab-703cc32763b3.jpg)
+## Available Scripts
 
-# Getting Started
+In the project directory, you can run:
 
-In order for Meet to connect to Mux's APIs, an access token and signing key must be provided. These are generated in the Mux Dashboard and should be set as environment variables.
+### `npm start`
 
-The easiest way to use Mux Meet is to deploy it to Vercel.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?demo-title=Mux%20Meet&demo-description=Real-time%20conferencing%20(meeting)%20SaaS%20app%2C%20built%20with%20Next.js%2C%20Mux%2C%20and%20Vercel&demo-url=https%3A%2F%2Fmuxmeet.vercel.app%2F&demo-image=%2F%2Fimages.ctfassets.net%2Fe5382hct74si%2F7ISNSvmomH7w7KUPCy8gn0%2F97ab315dcd21aa1d4b23e54dc123b562%2Fmux-meet.png&project-name=Mux%20Meet&repository-name=mux-meet&repository-url=https%3A%2F%2Fgithub.com%2Fmuxinc%2Fmeet&from=templates&skippable-integrations=1&env=MUX_TOKEN_ID%2CMUX_TOKEN_SECRET%2CMUX_SIGNING_KEY%2CMUX_PRIVATE_KEY&envDescription=How%20to%20get%20these%20env%20variables%3A&envLink=https%3A%2F%2Fgithub.com%2Fmuxinc%2Fmeet%23getting-started)
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-After creating your project, you will be prompted to configure it.
+### `npm test`
 
-![Configure Vercel Environment Variables](https://user-images.githubusercontent.com/1211390/216212169-251d87ef-83ae-4b9b-82e8-ae42cb430b02.jpg)
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-In a separate window, open https://dashboard.mux.com and sign in. You will need to create an account, if you don't already have one.
+### `npm run build`
 
-From the [Mux Dashboard](https://dashboard.mux.com), open Settings from the bottom left and click Access Tokens. Then click "Generate new token" and select Mux Video from the list of permissions. Optionally, give the access token a name like Mux Meet.
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-![Create new Mux Access Token](https://user-images.githubusercontent.com/1211390/216212226-d98b377b-7105-4db7-89f7-8b3f6aadd805.jpg)
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-Once your token is generated, copy and paste the ID and Secret as the values for `MUX_TOKEN_ID` and `MUX_TOKEN_SECRET` in Vercel.
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-Now go back to https://dashboard.mux.com to generate the Signing Key.
+### `npm run eject`
 
-From the [Mux Dashboard](https://dashboard.mux.com), open Settings from the bottom left and click Signing Keys. Then click "Generate new key" and make sure you use the same environment as you did for the Access Token. The Product selection should default to Video.
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-![Create new Mux Signing Key](https://user-images.githubusercontent.com/1211390/216212263-f8fe2d0a-e8f4-4ba6-8197-bbbe745c9cb1.jpg)
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Once your key is generated, copy and paste the ID and Secret as the values for `MUX_SIGNING_KEY` and `MUX_PRIVATE_KEY` in Vercel.
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-_Both the Access Token and Signing Key are sensitive. DO NOT MAKE THEM PUBLIC. It is safe to store them in Vercel as Environment Variables or locally during development._
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-Once all 4 environment variables are filled in. Click Deploy for Vercel to build and start your app.
+## Learn More
 
-## Cleanup Spaces after Meeting
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-Joining a new Space creates a Space in Mux, but in order to clean up Spaces after a meeting is over, set up a simple [webhook from Mux](https://docs.mux.com/guides/video/listen-for-webhooks).
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-From the [Mux Dashboard](https://dashboard.mux.com), open Settings from the bottom left and click Webhooks. Then click "Generate new webhook" and make sure you use the same environment as you did for the Access Token. The URL to notify will be your app's URL + `/api/webhooks`.
+### Code Splitting
 
-![Create new Mux webhook](https://user-images.githubusercontent.com/1211390/216212296-93dad4a3-1b91-4402-8eed-c0325dea0d69.jpg)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-Now generate the Webhook and copy the Signing Secret by clicking Show Signing Secret.
+### Analyzing the Bundle Size
 
-Configure your deployed app with a new environment variable named `WEBHOOK_SECRET` with the value of the Webhook Signing Secret.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-_Make sure you redeploy for your new environment variable to take affect._
+### Making a Progressive Web App
 
-## Limit Access
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-To limit the number of active Spaces, set an integer value for an environment variable `ACTIVE_SPACE_LIMIT`.
+### Advanced Configuration
 
-To limit the amount of time participants are allowed to spend in a temporary Space, set an integer value in seconds for an environment variable `SPACE_DURATION_SECONDS`.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-# Develop locally
+### Deployment
 
-Create an .env.local file at the root of the repo with the following secrets:
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-```bash
-MUX_TOKEN_ID=
-MUX_TOKEN_SECRET=
-MUX_SIGNING_KEY=
-MUX_PRIVATE_KEY=
-```
+### `npm run build` fails to minify
 
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-# Learn More
-
-## Mux
-
-- [Mux Real-Time Video](https://mux.com/real-time-video)
-- [Real-Time Video in React](https://docs.mux.com/guides/video/send-and-receive-real-time-video-from-a-react-application)
-- [Real-Time Video on Android](https://docs.mux.com/guides/video/send-and-receive-real-time-video-from-an-android-application)
-- [Real-Time Video on iOS](https://docs.mux.com/guides/video/send-and-receive-real-time-video-from-an-ios-application)
-
-## Next.js
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
